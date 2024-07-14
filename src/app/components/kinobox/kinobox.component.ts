@@ -7,6 +7,7 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ['./kinobox.component.scss']
 })
 export class KinoboxComponent implements OnInit {
+  public movieId: string = '';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -14,11 +15,13 @@ export class KinoboxComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const hostName = this.document.location.hostname;
+    const subdomain = hostName.split('.')[0];
+    this.movieId = subdomain;
+
     const srcScript = this.renderer2.createElement('script');
     srcScript.type = 'text/javascript';
-    srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: '404900'}})`;
+    srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: ${subdomain}}})`;
     this.renderer2.appendChild(this.document.body, srcScript);
-
-    console.log('HostName',this.document.location.hostname)
   }
 }
