@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { DOCUMENT } from "@angular/common";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-kinobox',
@@ -12,7 +11,6 @@ export class KinoboxComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer2: Renderer2,
-    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -21,14 +19,6 @@ export class KinoboxComponent implements OnInit {
     srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: '404900'}})`;
     this.renderer2.appendChild(this.document.body, srcScript);
 
-    console.log('route', this.route)
-    this.route.params.subscribe((params) => {
-      console.log('Subdomain', params)
-    })
-
-    this.route.paramMap.subscribe(params => {
-      console.log('paramMap', params);
-    });
+    console.log('HostName',this.document.location.hostname)
   }
-
 }
