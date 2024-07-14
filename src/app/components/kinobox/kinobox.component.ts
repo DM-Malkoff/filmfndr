@@ -22,7 +22,7 @@ export class KinoboxComponent implements OnInit {
     this.renderer2.appendChild(this.document.body, srcScript);
 
     this.route.params.subscribe((params) => {
-      console.log('Subdomain', params['subdomain'])
+      console.log('Subdomain', params)
     })
   }
 
