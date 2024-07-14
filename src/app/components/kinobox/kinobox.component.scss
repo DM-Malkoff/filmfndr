@@ -5,10 +5,13 @@
   height: 100vh;
   .bg{
     background-color: rgba( 10, 10, 10, 0.5);
-    padding: 50px;
+    padding: 5px 50px 50px 50px;
     border-radius: 20px;
+    h1{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: Calibri;
+      color: #fff;
+    }
   }
-}
-.kinobox_player {
-
 }
