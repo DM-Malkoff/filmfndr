@@ -1,11 +1,10 @@
 <div class="container">
   <div class="bg">
-    <div *ngIf="movieName; else notFound">
-      <h1>{{ movieName }}</h1>
-      <div class="kinobox_player" style="width: 700px;"></div>
-    </div>
+    <h1 *ngIf="movieName; else notFound">{{ movieName }}</h1>
+    <div class="kinobox_player" style="width: 700px;"></div>
+
     <ng-template #notFound>
-      <h1>Фильм не найден.</h1>
+      <h1>Фильм не найден</h1>
     </ng-template>
   </div>
 </div>

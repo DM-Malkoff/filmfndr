@@ -22,7 +22,6 @@ export class KinoboxComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-
     this.getMovie();
   }
 
