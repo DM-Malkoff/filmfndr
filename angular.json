@@ -75,15 +75,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "filmfndr:build:production",
-              "disableHostCheck": false
+              "browserTarget": "filmfndr:build:production"
             },
             "development": {
-              "browserTarget": "filmfndr:build:development",
-              "disableHostCheck": false
+              "browserTarget": "filmfndr:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "disableHostCheck":true
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
