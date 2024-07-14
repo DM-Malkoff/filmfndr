@@ -21,6 +21,7 @@ export class KinoboxComponent implements OnInit {
     srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: '404900'}})`;
     this.renderer2.appendChild(this.document.body, srcScript);
 
+    console.log('route', this.route)
     this.route.params.subscribe((params) => {
       console.log('Subdomain', params)
     })
