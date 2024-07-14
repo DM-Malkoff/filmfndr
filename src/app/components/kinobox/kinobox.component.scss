@@ -1,0 +1,14 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .bg{
+    background-color: rgba( 10, 10, 10, 0.5);
+    padding: 50px;
+    border-radius: 20px;
+  }
+}
+.kinobox_player {
+
+}
