@@ -11,6 +11,7 @@ import { takeUntil } from "rxjs/operators";
 })
 export class KinoboxComponent implements OnInit, OnDestroy {
   public movieId: string = '';
+  public movieName: string = '';
 
   private destroy$: Subject<void> = new Subject<void>();
 
@@ -37,7 +38,7 @@ export class KinoboxComponent implements OnInit, OnDestroy {
     this.getMovieService.getMovie(this.movieId).pipe(
       takeUntil(this.destroy$),
     ).subscribe((res) => {
-      console.log('res', res)
+      this.movieName = res.name;
     })
   }
 
