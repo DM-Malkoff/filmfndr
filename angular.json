@@ -75,7 +75,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "filmfndr:build:production"
+              "browserTarget": "filmfndr:build:production",
+              "disableHostCheck": false
             },
             "development": {
               "browserTarget": "filmfndr:build:development"
