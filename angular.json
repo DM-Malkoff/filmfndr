@@ -79,7 +79,8 @@
               "disableHostCheck": false
             },
             "development": {
-              "browserTarget": "filmfndr:build:development"
+              "browserTarget": "filmfndr:build:development",
+              "disableHostCheck": false
             }
           },
           "defaultConfiguration": "development"
