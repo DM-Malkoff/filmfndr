@@ -22,23 +22,23 @@ export class KinoboxComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    const hostName = this.document.location.hostname;
-    const subdomain = hostName.split('.')[0];
-    this.movieId = subdomain;
-
-    const srcScript = this.renderer2.createElement('script');
-    srcScript.type = 'text/javascript';
-    srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: ${subdomain}}})`;
-    this.renderer2.appendChild(this.document.body, srcScript);
 
     this.getMovie();
   }
 
   private getMovie(): void {
+    const hostName = this.document.location.hostname;
+    const subdomain = hostName.split('.')[0];
+    this.movieId = subdomain;
+
     this.getMovieService.getMovie(this.movieId).pipe(
       takeUntil(this.destroy$),
     ).subscribe((res) => {
       this.movieName = res.name;
+      const srcScript = this.renderer2.createElement('script');
+      srcScript.type = 'text/javascript';
+      srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: ${subdomain}}})`;
+      this.renderer2.appendChild(this.document.body, srcScript);
     })
   }
 
