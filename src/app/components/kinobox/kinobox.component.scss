@@ -1,17 +1,24 @@
-.container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  .bg{
-    background-color: rgba( 10, 10, 10, 0.5);
-    padding: 5px 50px 50px 50px;
-    border-radius: 20px;
-    h1{
-      text-align: center;
-      text-transform: uppercase;
-      font-family: Calibri;
-      color: #fff;
+.wrap {
+  min-width: 320px;
+  position: relative;
+  padding-top: 250px;
+  .wrap-main {
+    background-color: #ededed;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  }
+  .wrap-center {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+    .content {
+      padding: 20px;
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+        color: #333;
+      }
     }
   }
 }
+
