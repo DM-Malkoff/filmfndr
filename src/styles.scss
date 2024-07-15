@@ -9,3 +9,9 @@ body {
   width: 100%;
   font-weight: 400;
 }
+
+@media screen and (max-width: 470px) {
+  body {
+    background-image: none;
+  }
+}
