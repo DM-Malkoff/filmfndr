@@ -36,7 +36,7 @@ export class KinoboxComponent implements OnInit, OnDestroy {
       this.movieName = res.name;
       const srcScript = this.renderer2.createElement('script');
       srcScript.type = 'text/javascript';
-      srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: ${subdomain}}})`;
+      srcScript.text = `kbox('.kinobox_player', {search: {kinopoisk: ${this.movieId}}})`;
       this.renderer2.appendChild(this.document.body, srcScript);
     })
   }
