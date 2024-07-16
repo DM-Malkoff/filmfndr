@@ -10,7 +10,7 @@ import { takeUntil } from "rxjs/operators";
   styleUrls: ['./kinobox.component.scss']
 })
 export class KinoboxComponent implements OnInit, OnDestroy {
-  public movieId: string = '';
+  public movieId: string | undefined;
   public movieName: string = '';
 
   private destroy$: Subject<void> = new Subject<void>();
@@ -28,7 +28,7 @@ export class KinoboxComponent implements OnInit, OnDestroy {
   private getMovie(): void {
     const hostName = this.document.location.hostname;
     const subdomain = hostName.split('.')[0];
-    this.movieId = subdomain;
+    this.movieId = subdomain.split('-').pop();
 
     this.getMovieService.getMovie(this.movieId).pipe(
       takeUntil(this.destroy$),

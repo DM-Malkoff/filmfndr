@@ -13,7 +13,7 @@ export class GetMovieService {
     private http: HttpClient
   ) { }
 
-  public getMovie(id: string): Observable<any> {
+  public getMovie(id: string | undefined): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`, {
       headers: {
         'X-API-KEY': environment.API_KEY
